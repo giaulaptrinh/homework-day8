@@ -7,7 +7,6 @@ import layouts from "vite-plugin-vue-layouts";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
     vueRouter({
       extensions: [".vue", ".md"],
     }),
@@ -16,6 +15,7 @@ export default defineConfig({
       pagesDirs: "src/pages",
       defaultLayout: "default",
     }),
+    vue(),
   ],
   resolve: {
     alias: {
