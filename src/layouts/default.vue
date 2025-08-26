@@ -43,6 +43,13 @@ import UserItem from '@/components/users/user-item.vue';
     flex: 1;
     display: flex;
     flex-direction: column;
+    margin-left: 80px;
+}
+
+@media (min-width: 1280px) {
+    .main-content {
+        margin-left: 230px;
+    }
 }
 
 .content-wrapper {

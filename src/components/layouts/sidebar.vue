@@ -9,8 +9,9 @@
         <div class="side-nav__divider"></div>
 
         <ul>
+            <!-- Dashboard -->
             <li>
-                <a class="side-menu" href="#">
+                <a class="side-menu" href="#" @click="toggleSubmenu('dashboard')">
                     <div class="side-menu__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -20,7 +21,7 @@
                     </div>
                     <div class="side-menu__title">
                         Dashboard
-                        <div class="side-menu__sub-icon">
+                        <div class="side-menu__sub-icon" :class="{ 'rotate-180': openMenus.dashboard }">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -31,8 +32,9 @@
                 </a>
             </li>
 
+            <!-- E-Commerce -->
             <li>
-                <a class="side-menu" href="#">
+                <a class="side-menu" href="#" @click="toggleSubmenu('ecommerce')">
                     <div class="side-menu__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -43,7 +45,7 @@
                     </div>
                     <div class="side-menu__title">
                         E-Commerce
-                        <div class="side-menu__sub-icon">
+                        <div class="side-menu__sub-icon" :class="{ 'rotate-180': openMenus.ecommerce }">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -54,8 +56,118 @@
                 </a>
             </li>
 
+            <!-- Inbox -->
             <li>
-                <a class="side-menu side-menu--active" href="#">
+                <a class="side-menu" href="#">
+                    <div class="side-menu__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="side-menu__title">Inbox</div>
+                </a>
+            </li>
+
+            <!-- File Manager -->
+            <li>
+                <a class="side-menu" href="#">
+                    <div class="side-menu__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2l5 0 2 3h9a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="side-menu__title">File Manager</div>
+                </a>
+            </li>
+
+            <!-- Point of Sale -->
+            <li>
+                <a class="side-menu" href="#">
+                    <div class="side-menu__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="8" cy="21" r="1"></circle>
+                            <circle cx="19" cy="21" r="1"></circle>
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                        </svg>
+                    </div>
+                    <div class="side-menu__title">Point of Sale</div>
+                </a>
+            </li>
+
+            <!-- Chat -->
+            <li>
+                <a class="side-menu" href="#">
+                    <div class="side-menu__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="side-menu__title">Chat</div>
+                </a>
+            </li>
+
+            <!-- Post -->
+            <li>
+                <a class="side-menu" href="#">
+                    <div class="side-menu__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                    </div>
+                    <div class="side-menu__title">Post</div>
+                </a>
+            </li>
+
+            <!-- Calendar -->
+            <li>
+                <a class="side-menu" href="#">
+                    <div class="side-menu__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                            <line x1="16" x2="16" y1="2" y2="6"></line>
+                            <line x1="8" x2="8" y1="2" y2="6"></line>
+                            <line x1="3" x2="21" y1="10" y2="10"></line>
+                        </svg>
+                    </div>
+                    <div class="side-menu__title">Calendar</div>
+                </a>
+            </li>
+
+            <div class="side-nav__divider"></div>
+
+            <!-- Crud -->
+            <li>
+                <a class="side-menu" href="#" @click="toggleSubmenu('crud')">
+                    <div class="side-menu__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                            <path d="M18.375 2.625a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4Z"></path>
+                        </svg>
+                    </div>
+                    <div class="side-menu__title">
+                        Crud
+                        <div class="side-menu__sub-icon" :class="{ 'rotate-180': openMenus.crud }">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Users -->
+            <li>
+                <a class="side-menu side-menu--active" href="#" @click="toggleSubmenu('users')">
                     <div class="side-menu__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -67,7 +179,7 @@
                     </div>
                     <div class="side-menu__title">
                         Users
-                        <div class="side-menu__sub-icon transform rotate-180">
+                        <div class="side-menu__sub-icon" :class="{ 'rotate-180': openMenus.users }">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -76,7 +188,7 @@
                         </div>
                     </div>
                 </a>
-                <ul class="side-menu__sub-open">
+                <ul class="side-menu__sub-open" v-show="openMenus.users">
                     <li>
                         <a class="side-menu side-menu--active" href="/users-layout-1">
                             <div class="side-menu__icon">
@@ -95,12 +207,25 @@
     </nav>
 </template>
 
-<script>
-export default {
-    name: 'Sidebar'
+<script setup>
+import { ref } from 'vue'
+
+const openMenus = ref({
+    dashboard: false,
+    ecommerce: false,
+    crud: false,
+    users: true // Users menu is open by default since it's active
+})
+
+const toggleSubmenu = (menuName) => {
+    openMenus.value[menuName] = !openMenus.value[menuName]
 }
 </script>
 
 <style scoped>
 @import '../../assets/css/sidebar.css';
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
 </style>
