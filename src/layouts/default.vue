@@ -17,7 +17,6 @@ import Header from '../components/layouts/header.vue';
 <script setup lang="ts">
 import Sidebar from '@/components/layouts/sidebar.vue';
 import Header from '@/components/layouts/header.vue';
-import UserItem from '@/components/users/user-item.vue';
 </script>
 
 <template>
@@ -26,7 +25,6 @@ import UserItem from '@/components/users/user-item.vue';
         <div class="main-content">
             <Header />
             <div class="content-wrapper">
-                <UserItem />
                 <RouterView />
             </div>
         </div>
@@ -37,6 +35,7 @@ import UserItem from '@/components/users/user-item.vue';
 .app-layout {
     display: flex;
     min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .main-content {
@@ -44,6 +43,9 @@ import UserItem from '@/components/users/user-item.vue';
     display: flex;
     flex-direction: column;
     margin-left: 80px;
+    border-radius: 30px 0 0 0;
+    background: #f1f5f9;
+    min-height: 100vh;
 }
 
 @media (min-width: 1280px) {
@@ -54,7 +56,6 @@ import UserItem from '@/components/users/user-item.vue';
 
 .content-wrapper {
     flex: 1;
-    padding: 2rem;
-    background-color: #f1f5f9;
+    padding: 1.5rem;
 }
 </style>
